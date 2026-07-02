@@ -1,5 +1,8 @@
 <main>
-  <h1>&#9988; Snip</h1>
+  <div class="hero">
+    <h1>&#9988; Snip</h1>
+    <p class="hero-sub">Paste a long URL &mdash; get a short link instantly.</p>
+  </div>
 
   <!-- Shorten form -->
   <section class="card">
@@ -25,7 +28,7 @@
 
     @if (created(); as link) {
       <div class="result">
-        Short link:
+        <span>Short link:</span>
         <a [href]="link.shortUrl" target="_blank" rel="noopener">{{ link.shortUrl }}</a>
       </div>
     }
