@@ -1,0 +1,132 @@
+* { box-sizing: border-box; }
+
+main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #1e1e2e;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #5e5ce6;
+}
+
+h2 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e4e4f0;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+
+/* Form */
+.row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.row input {
+  flex: 1;
+  padding: 0.6rem 0.9rem;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  transition: border-color .15s;
+}
+
+.row input:focus {
+  outline: none;
+  border-color: #5e5ce6;
+}
+
+.row button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background: #5e5ce6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity .15s;
+}
+
+.row button:hover:not(:disabled) { opacity: 0.85; }
+.row button:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* Feedback */
+.error {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  color: #c0392b;
+}
+
+.result {
+  margin-top: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.result a {
+  color: #15803d;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+/* Table */
+.muted {
+  color: #888;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+}
+
+th {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 2px solid #eee;
+}
+
+td {
+  padding: 0.55rem 0.6rem;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+}
+
+td.url-cell {
+  max-width: 420px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+td a { color: #5e5ce6; text-decoration: none; }
+td a:hover { text-decoration: underline; }
+
+tr:last-child td { border-bottom: none; }

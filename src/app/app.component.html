@@ -1,0 +1,63 @@
+<main>
+  <h1>&#9988; Snip</h1>
+
+  <!-- Shorten form -->
+  <section class="card">
+    <form (ngSubmit)="submit()">
+      <div class="row">
+        <input
+          type="url"
+          [value]="urlInput()"
+          (input)="urlInput.set($any($event.target).value)"
+          placeholder="https://example.com/long/url"
+          aria-label="Long URL"
+          autocomplete="off"
+        />
+        <button type="submit" [disabled]="submitting()">
+          {{ submitting() ? 'Shortening\u2026' : 'Shorten' }}
+        </button>
+      </div>
+    </form>
+
+    @if (error()) {
+      <p class="error">{{ error() }}</p>
+    }
+
+    @if (created(); as link) {
+      <div class="result">
+        Short link:
+        <a [href]="link.shortUrl" target="_blank" rel="noopener">{{ link.shortUrl }}</a>
+      </div>
+    }
+  </section>
+
+  <!-- Links table -->
+  <section class="card">
+    <h2>All links</h2>
+
+    @if (links().length === 0) {
+      <p class="muted">No links yet &mdash; shorten your first URL above.</p>
+    } @else {
+      <table>
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Original URL</th>
+            <th>Hits</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (link of links(); track link.code) {
+            <tr>
+              <td><a [href]="link.shortUrl" target="_blank" rel="noopener">{{ link.code }}</a></td>
+              <td class="url-cell">
+                <a [href]="link.url" target="_blank" rel="noopener" [title]="link.url">{{ link.url }}</a>
+              </td>
+              <td>{{ link.hits }}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+  </section>
+</main>
