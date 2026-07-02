@@ -167,3 +167,20 @@ git checkout backend          # put submodule on its branch (not detached HEAD)
 cd ..
 git add backend && git commit -m "chore: bump backend"
 ```
+
+---
+
+## Bundle (production build)
+
+The `bundle/` submodule (branch: `bundle`) is **auto-generated — never hand-edit it.**
+Run the build script to rebuild from all three source branches:
+
+```sh
+node scripts/build-bundle.mjs          # build only (local commits)
+node scripts/build-bundle.mjs --push   # build + push bundle and main to origin
+```
+
+`bundle/` assembles `server.js` + `cli.js` + `public/` (Angular SPA) + `.env` +
+`Dockerfile` + `railway.json`. Start with `bun start`, or `docker build`, or
+deploy to Railway (Dockerfile builder auto-detected via `railway.json`).
+
