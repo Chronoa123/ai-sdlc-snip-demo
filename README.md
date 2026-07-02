@@ -59,10 +59,10 @@ The superproject (`main`) only contains `.gitmodules` and this README — no sou
 ## Cloning
 
 > **Important:** a plain `git clone` leaves all submodule folders **empty**.
-> Always clone with `--recurse-submodules`:
+> Always clone the superproject branch with `--recurse-submodules`:
 
 ```sh
-git clone --recurse-submodules https://github.com/Chronoa123/ai-sdlc-snip-demo.git
+git clone -b main --recurse-submodules https://github.com/Chronoa123/ai-sdlc-snip-demo.git
 ```
 
 Already cloned without the flag?
